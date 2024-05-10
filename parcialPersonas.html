@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <script src="funciones.js"></script>
+    <title>ABM PERSONAS</title>
+</head>
+
+    <body>
+        <div id="cabecera" class="formulario">
+    
+            <h1>Form Datos</h1>
+            <br>
+            <label>Filtrar por</label>
+            <select id="selector" class="custom-select" style="width:200px;" onchange="cargarGrillaYboton();">
+                <option value="1">Ciudadano</option>
+                <option value="2">Extranjero</option>
+                <option value="3" selected>Todos</option>
+            </select>
+            <br>
+            <label>Calcular promedio de diferencia de años:</label>
+            <input type="text" id="edadPromedio" class="input-text">
+            <button id="btnCalcular" onclick="recorrerVector()" class="boton">Calcular</button>
+            <br>
+            <label>Mostrar columnas:</label>
+            <br>
+            
+            <input type="checkbox" id="id" onchange="cargarGrillaYboton()" checked value="id">
+            <label for="id">id</label>
+            <input type="checkbox" id="apellido" onchange="cargarGrillaYboton()" checked  value="apellido">
+            <label for="apellido">apellido</label>
+            <input type="checkbox" id="nombre" onchange="cargarGrillaYboton()" checked value="nombre">
+            <label for="nombre">nombre</label>
+            <input type="checkbox" id="fechaNacimiento" onchange="cargarGrillaYboton()" checked  value="fechaNacimiento">
+            <label for="fechaNacimiento">fecha de Nacimiento</label>
+            <input type="checkbox" id="dni" onchange="cargarGrillaYboton()" checked value="dni">
+            <label for="dni">Dni</label>
+            <input type="checkbox" id="paisOrigen" onchange="cargarGrillaYboton()" checked value="paisOrigen">
+            <label for="paisOrigen">Pais de Origen</label>
+
+    
+        </div>
+
+        <div id="principal" class="grilla" >
+    
+            <table id="tablaPrincipal"  >
+
+        
+            </table>
+        </div>
+        
+        <div id="botonABM" >
+
+        </div>
+
+        <div id="seccionABM" class="field_container" style="display: none;">
+            <label>Formulario de ABM</label>
+            <br>
+            <label for="abm.id" >id:</label>
+            <input type="text" id="abm.id" class="input-text">
+            <input type="hidden" id="abm.fila">
+            <br>
+            <label for="abm.apellido" >apellido:</label>
+            <input type="text" id="abm.apellido" class="input-text">
+            <br>
+            <label for="abm.nombre" >nombre:</label>
+            <input type="text" id="abm.nombre" class="input-text">
+            <br>
+            <label for="abm.fechaNacimiento" >fechaNacimiento:</label>
+            <input type="text" id="abm.fechaNacimiento" class="input-text">
+            <br>
+            <label for="abm.dni" >dni:</label>
+            <input type="text" id="abm.dni" class="input-text">
+            <br>
+            <label for="abm.paisOrigen" >paisOrigen:</label>
+            <input type="text" id="abm.paisOrigen" class="input-text">
+
+            <br>
+            <button id="btnAlta" onclick="AgregarRegistroAVector()" class="boton">Alta</button>
+            <button id="btnBaja" onclick="BajaRegistroDeVector()" class="boton">Baja</button>
+            <button id="btnModificar" onclick="ModificarRegistroDeVector()" class="boton">Modificar</button>
+            <button id="btnLimpiar" onclick="LimpiarRegistroDeVector()" class="boton">Limpiar</button>
+            <button id="btnCancelar" onclick="mostrarSeccionPrincipal()" class="boton">Cancelar</button>
+        </div>
+            
+    </body>
+
+</html>
