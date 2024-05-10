@@ -28,7 +28,7 @@ class Persona
 
 class Ciudadano extends Persona
 {
-    dni = 0.0;
+    dni = 0;
 
     constructor(id,nombre,apellido,fechaNacimiento,dni)
     {
@@ -48,7 +48,7 @@ class Ciudadano extends Persona
 
 class Extrangero extends Persona
 {
-    paisOrigen = 0.0;
+    paisOrigen = "";
     constructor(id,nombre,apellido,fechaNacimiento,paisOrigen)
     {
         super(id,nombre,apellido,fechaNacimiento);
